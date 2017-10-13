@@ -49,6 +49,7 @@ export default class VideoPlayer extends Component {
             currentTime: 0,
             error: false,
             duration: 0,
+            rateLabel: this.props.rate || 1,
         };
 
         /**
@@ -82,6 +83,7 @@ export default class VideoPlayer extends Component {
             togglePlayPause: this._togglePlayPause.bind( this ),
             toggleControls: this._toggleControls.bind( this ),
             toggleTimer: this._toggleTimer.bind( this ),
+            toggleRate: this._toggleRate.bind( this ),
         };
 
         /**
@@ -423,6 +425,23 @@ export default class VideoPlayer extends Component {
     _toggleTimer() {
         let state = this.state;
         state.showTimeRemaining = ! state.showTimeRemaining;
+        this.setState( state );
+    }
+
+    /**
+     * Toggle video speed (rate)
+     */
+    _toggleRate() {
+        let state = this.state;
+        if(state.rate === 1){
+            state.rate = 1.25;    
+        } else if(state.rate === 1.25){
+            state.rate = 1.5;    
+        } else if(state.rate === 1.5){
+            state.rate = 2;    
+        } else if(state.rate === 2){
+            state.rate = 1;    
+        }
         this.setState( state );
     }
 
@@ -802,7 +821,7 @@ export default class VideoPlayer extends Component {
                     style={[ styles.controls.column, styles.controls.vignette,
                 ]}>
                     <View style={ styles.controls.topControlGroup }>
-                        { this.renderBack() }
+                        { this.renderRate() }
                         <View style={ styles.controls.pullRight }>
                             { this.renderVolume() }
                             { this.renderFullscreen() }
@@ -824,6 +843,17 @@ export default class VideoPlayer extends Component {
             />,
             this.methods.onBack,
             styles.controls.back
+        );
+    }
+
+    /**
+     * Rate button control
+     */
+    renderRate() {
+        return this.renderControl(
+            <Text>x{this.state.rate}</Text>,
+            this.methods.toggleRate,
+            styles.controls.rateLabel
         );
     }
 
@@ -1193,6 +1223,12 @@ const styles = {
             color: '#FFF',
             fontSize: 11,
             textAlign: 'right',
+        },
+        rateLabel: {
+            backgroundColor: 'transparent',
+            color: '#FFF',
+            fontSize: 11,
+            textAlign: 'left',
         },
     }),
     volume: StyleSheet.create({
