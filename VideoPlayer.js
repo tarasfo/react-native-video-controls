@@ -1226,6 +1226,9 @@ const styles = {
         },
         rateLabel: {
             backgroundColor: 'transparent',
+            // color: 'white',
+            // fontSize: 11,
+            // textAlign: 'left',
         },
     }),
     volume: StyleSheet.create({
