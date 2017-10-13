@@ -851,7 +851,7 @@ export default class VideoPlayer extends Component {
      */
     renderRate() {
         return this.renderControl(
-            <Text>x{this.state.rate}</Text>,
+            <Text style={{color: 'white'}}>x{this.state.rate}</Text>,
             this.methods.toggleRate,
             styles.controls.rateLabel
         );
@@ -1226,9 +1226,6 @@ const styles = {
         },
         rateLabel: {
             backgroundColor: 'transparent',
-            color: '#FFF',
-            fontSize: 11,
-            textAlign: 'left',
         },
     }),
     volume: StyleSheet.create({
