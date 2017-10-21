@@ -130,7 +130,12 @@ export default class VideoPlayer extends Component {
         };
     }
 
-
+    componentWillReceiveProps(nextProps){
+        this.setState(state=>{
+            state['paused'] = nextProps.paused;
+            return state;
+        })
+    }
 
     /**
     | -------------------------------------------------------
