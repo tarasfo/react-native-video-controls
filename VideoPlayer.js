@@ -437,15 +437,22 @@ export default class VideoPlayer extends Component {
      * Toggle video speed (rate)
      */
     _toggleRate() {
+        // Video speeds (.6, .75, 1.0, 1.25, 1.5, 1.75, 2.0)
         let state = this.state;
-        if(state.rate === 1){
+        if(state.rate === 0.6){
+            state.rate = 0.75;    
+        } else if(state.rate === 0.75){
+            state.rate = 1;    
+        } else if(state.rate === 1){
             state.rate = 1.25;    
         } else if(state.rate === 1.25){
             state.rate = 1.5;    
         } else if(state.rate === 1.5){
+            state.rate = 1.75;    
+        } else if(state.rate === 1.75){
             state.rate = 2;    
         } else if(state.rate === 2){
-            state.rate = 1;    
+            state.rate = 0.6;    
         }
         this.setState( state );
     }
