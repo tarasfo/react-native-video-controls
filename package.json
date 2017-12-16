@@ -23,6 +23,6 @@
   },
   "peerDependencies": {
     "react-native": "0.47.2",
-    "react-native-video": "^2.0.0"
+    "react-native-video": "git://github.com/tarasfo/react-native-video.git#3240e21"
   }
 }
