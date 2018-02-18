@@ -1,3 +1,20 @@
+## 2.0.2 (11-01-2018)
+Fix for [#67](https://github.com/itsnubix/react-native-video-controls/issues/67)
+  - Changed renderNullControl to return empty `<View/>`
+
+## 2.0.1 (12-12-2017)
+Fix for [#58](https://github.com/itsnubix/react-native-video-controls/issues/58)
+
+## 2.0.0 (02-11-2017)
+Update peer deps and version up.
+
+## 1.5.1 (01-11-2017)
+  - [Fixed deprecation of Image tag containing children](https://github.com/itsnubix/react-native-video-controls/issues/55)
+
+## 1.5.0 (27-10-2017)
+  - [Added ability to remove controls](https://github.com/itsnubix/react-native-video-controls/pull/50)
+  - [Added ability to pass props](https://github.com/itsnubix/react-native-video-controls/pull/52)
+
 ## 1.4.1 (30-08-2017)
 Bug fixes. Updated `react-native-video` to ^2.0.0 in the peer deps and `react-native` to 47.2. Changed default title font size to 14.
 
@@ -8,7 +25,7 @@ Bug fixes. Updated `react-native-video` to ^2.0.0 in the peer deps and `react-na
   - Props were being assigned twice. Removing second assignment has resolved the issue.
 
 ## 1.4.0 (09-08-2017)
-Distilled down some merge requests and found a simple solution to a seekbar issue reported. Sometimes you just gotta give your elements a little more space. Let this be a lesson not to rush out push requests between meetings...I think this warrants a larger version change...you can now pass any prop to the `<VideoPlayer>` element and it'll pass those to `react-native-video`. API changes quite a lot because of that but shouldn't break. 
+Distilled down some merge requests and found a simple solution to a seekbar issue reported. Sometimes you just gotta give your elements a little more space. Let this be a lesson not to rush out push requests between meetings...I think this warrants a larger version change...you can now pass any prop to the `<VideoPlayer>` element and it'll pass those to `react-native-video`. API changes quite a lot because of that but shouldn't break.
 
 ## 1.3.1 (09-08-2017)
 

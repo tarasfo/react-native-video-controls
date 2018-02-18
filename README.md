@@ -1,5 +1,5 @@
 # react-native-video-controls
-Controls for the React Native `<Video>` component at [react-native-video](https://github.com/react-native-community/react-native-video). For support with RN 0.38.x or lower use version 1.0.x.
+Controls for the React Native `<Video>` component at [react-native-video](https://github.com/react-native-community/react-native-video). For support with RN 0.45 or lower use version 1.x.
 
 ## Features
 This package contains a simple set of GUI controls that work with the [react-native-video](https://github.com/react-native-community/react-native-video) `<Video>` component. This includes a back button, volume bar, fullscreen toggle, play/pause toggle, seekbar, title, error handling and timer toggle that can switch between time remaining and current time when tapped.
@@ -56,5 +56,11 @@ The `<VideoPlayer>` component can take a number of inputs to customize it as nee
     onBack={ () => {} }              // Function fired when back button is pressed.
     onEnd={ () => {} }               // Fired when the video is complete.
 
+    // disabling individual controls
+    disableFullscreen={ false }      // Used to hide the Fullscreen control.
+    disableSeekbar={ false }         // Used to hide the Seekbar control.
+    disableVolume={ false }          // Used to hide the Volume control.
+    disableBack={ false }            // Used to hide the Back control.
+    disableTimer={ false }           // Used to hide the Timer control.
 />
 ```
